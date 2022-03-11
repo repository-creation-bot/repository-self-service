@@ -1,0 +1,15 @@
+on:
+  issues:
+    types: [opened, edited]
+  issue_comment:
+    types: [created]
+jobs:
+  repo_bot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: repository-creation-bot/repository-creation-bot@main
+        with:
+          org_admins: repository-creation-bot/org-admins
+          token: ${{ secrets.org-token }}
+          event_name: ${{ github.event_name }}
+          event: ${{ toJSON(github.event) }}
