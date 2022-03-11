@@ -10,6 +10,4 @@ jobs:
       - uses: repository-creation-bot/repository-creation-bot@main
         with:
           org_admins: repository-creation-bot/org-admins
-          token: ${{ secrets.org-token }}
-          event_name: ${{ github.event_name }}
-          event: ${{ toJSON(github.event) }}
+          token: ${{ secrets.ORG_TOKEN }}
